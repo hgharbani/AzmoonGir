@@ -99,7 +99,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\TestDb.cs" />
+    <Compile Include="Model\Group.cs" />
+    <Compile Include="Model\History.cs" />
+    <Compile Include="Model\Question.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
