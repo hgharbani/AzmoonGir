@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AzmoonGir
 {
-  public  class AppConfigration
+    public class AppConfigration
     {
         public AppConfigration()
         {
         }
 
         public static string FileName = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\" +
-                                        Assembly.GetExecutingAssembly().GetName().Name; 
+                                        Assembly.GetExecutingAssembly().GetName().Name;
+
         public static string ReadSeting(string key)
         {
             string result = string.Empty;
@@ -32,7 +29,7 @@ namespace AzmoonGir
             return result;
         }
 
-        public static void AddOrUpdateAppSetting(string key,string value)
+        public static void AddOrUpdateAppSetting(string key, string value)
         {
             try
             {
@@ -40,8 +37,7 @@ namespace AzmoonGir
                 var setting = congifFile.AppSettings.Settings;
                 if (setting[key] == null)
                 {
-                    setting.Add(key,value);
-
+                    setting.Add(key, value);
                 }
                 else
                 {
@@ -49,15 +45,10 @@ namespace AzmoonGir
                     congifFile.Save(ConfigurationSaveMode.Modified);
                     ConfigurationManager.RefreshSection(congifFile.AppSettings.SectionInformation.Name);
                 }
-
-
-
             }
             catch (Exception e)
             {
-              
             }
-
         }
     }
 }
